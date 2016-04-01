@@ -8,7 +8,7 @@ $controller = @$_GET["controller"];
 $action = @$_GET["action"];
 if($controller && $action) {
 	$controller .= "Controller";
-	require_once "$controller.php";
+	require_once __DIR__ . "/$controller.php";
 	$x = new $controller();
 	$x->{"action" . $action}();
 } else {
